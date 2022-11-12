@@ -1,12 +1,10 @@
-import React from "react";
-
-function PostCard({ post }) {
+const PostCard = ({ post }) => {
   return (
     <div>
       {post.title}
-      {post.excert}
+      {post.excerpt}
     </div>
   );
-}
+};
 
 export default PostCard;

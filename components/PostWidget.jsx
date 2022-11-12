@@ -1,7 +1,5 @@
-import React from "react";
-
-function PostWidget() {
+const PostWidget = () => {
   return <div>PostWidget</div>;
-}
+};
 
 export default PostWidget;
