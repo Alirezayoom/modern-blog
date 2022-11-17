@@ -61,7 +61,7 @@ const PostDetail = ({ post }) => {
   return (
     <div className="bg-white shadow-lg rounded-lg lg:p-8 pb-12 mb-8">
       <div className="relative overflow-hidden shadow-md mb-6">
-        <Image
+        <img
           src={post.featuredImage.url}
           alt={post.title}
           className="object-top h-full w-full rounded-t-lg"
@@ -71,7 +71,7 @@ const PostDetail = ({ post }) => {
       <div className="px-4 lg:px-0">
         <div className="flex items-center mb-8 w-full">
           <div className="flex items-center mb-4 lg:mb-0 w-full lg:w-auto mr-8">
-            <Image
+            <img
               alt={post.author.name}
               height="30px"
               width="30px"
