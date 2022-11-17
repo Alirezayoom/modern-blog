@@ -1,5 +1,6 @@
 import React from "react";
 import moment from "moment";
+import Image from "next/image";
 
 const PostDetail = ({ post }) => {
   const getContentFragment = (index, text, obj, type) => {
@@ -44,7 +45,7 @@ const PostDetail = ({ post }) => {
         );
       case "image":
         return (
-          <img
+          <Image
             key={index}
             alt={obj.title}
             height={obj.height}
@@ -60,7 +61,7 @@ const PostDetail = ({ post }) => {
   return (
     <div className="bg-white shadow-lg rounded-lg lg:p-8 pb-12 mb-8">
       <div className="relative overflow-hidden shadow-md mb-6">
-        <img
+        <Image
           src={post.featuredImage.url}
           alt={post.title}
           className="object-top h-full w-full rounded-t-lg"
