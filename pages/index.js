@@ -1,4 +1,5 @@
 import Head from "next/head";
+import { Categories, PostWidget, PostCard } from "../components";
 
 const data = [
   {
@@ -38,13 +39,13 @@ export default function Home() {
       >
         <div style={{ gridColumnStart: "1", gridColumnEnd: "4" }}>
           {data.map((data) => (
-            <div key={data.id}>
-              {data.title}
-              {data.excerpt}
-            </div>
+            <PostCard key={data.id} post={data} />
           ))}
         </div>
-        <div style={{ backgroundColor: "green" }}>hi</div>
+        <div style={{ backgroundColor: "green" }}>
+          <PostWidget />
+          <Categories />
+        </div>
       </div>
     </div>
   );
