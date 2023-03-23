@@ -1,22 +1,8 @@
 import Head from "next/head";
 import { Categories, PostWidget, PostCard } from "../components";
+import { getPosts } from "../services";
 
-const data = [
-  {
-    id: 1,
-    title: "React Best Practices",
-    excerpt: "Learn React best practices in one topic",
-  },
-  { id: 2, title: "React Testing", excerpt: "Learn React testing easily" },
-  {
-    id: 3,
-    title: "React Best Practices",
-    excerpt: "Learn React best practices in one topic",
-  },
-  { id: 4, title: "React Testing", excerpt: "Learn React testing easily" },
-];
-
-export default function Home() {
+export default function Home({ posts }) {
   return (
     <div
       style={{
@@ -38,8 +24,8 @@ export default function Home() {
         }}
       >
         <div style={{ gridColumnStart: "1", gridColumnEnd: "4" }}>
-          {data.map((data) => (
-            <PostCard key={data.id} post={data} />
+          {posts.map((post) => (
+            <PostCard key={post.node.title} post={post.node} />
           ))}
         </div>
         <div style={{ backgroundColor: "green" }}>
@@ -49,4 +35,13 @@ export default function Home() {
       </div>
     </div>
   );
+}
+
+export async function getStaticProps() {
+  const posts = (await getPosts()) || [];
+  console.log(posts);
+
+  return {
+    props: { posts },
+  };
 }
