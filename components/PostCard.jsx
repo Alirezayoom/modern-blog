@@ -87,6 +87,18 @@ const PostCard = ({ post }) => {
         <div style={{ fontSize: "1.125rem", textAlign: "center" }}>
           {post.excerpt}
         </div>
+        <div style={{ display: "flex", justifyContent: "center" }}>
+          <Link
+            href={`/post/${post.slug}`}
+            style={{
+              backgroundColor: "#222",
+              padding: "0.5rem 2rem",
+              borderRadius: "9rem",
+            }}
+          >
+            Read More
+          </Link>
+        </div>
       </div>
     </div>
   );
