@@ -1,12 +1,14 @@
+import { useState, useEffect } from "react";
 import Link from "next/link";
-
-const categories = [
-  { name: "Javascript", slug: "javascript" },
-  { name: "React JS", slug: "react" },
-  { name: "Next JS", slug: "next" },
-];
+import { getCategories } from "../services";
 
 const Header = () => {
+  const [categories, setCategories] = useState([]);
+
+  useEffect(() => {
+    getCategories().then((newCategories) => setCategories(newCategories));
+  }, []);
+
   return (
     <header
       style={{
