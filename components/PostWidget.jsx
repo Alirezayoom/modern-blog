@@ -24,7 +24,7 @@ const PostWidget = ({ categories, slug }) => {
         backgroundColor: "#444",
         padding: "1rem",
         borderRadius: "1rem",
-        marginBottom: "2rem",
+        marginBottom: "1rem",
       }}
     >
       <h3
