@@ -9,7 +9,7 @@ export default function Home({ posts }) {
         maxWidth: "64rem",
         margin: "0 auto",
         padding: "0 2rem",
-        marginBottom: "2rem",
+        marginTop: "2rem",
       }}
     >
       <Head>
@@ -18,9 +18,8 @@ export default function Home({ posts }) {
       </Head>
       <div
         style={{
-          backgroundColor: "red",
           display: "grid",
-          gridTemplateColumns: "repeat(4,1fr)",
+          gridTemplateColumns: "1fr 1fr 1fr 1.3fr",
           gap: "1rem",
         }}
       >
@@ -36,7 +35,7 @@ export default function Home({ posts }) {
             <PostCard key={post.node.title} post={post.node} />
           ))}
         </div>
-        <div style={{ backgroundColor: "green" }}>
+        <div>
           <PostWidget />
           <Categories />
         </div>
