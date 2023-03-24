@@ -34,7 +34,7 @@ const Categories = () => {
         }}
       >
         {categories.map((category) => (
-          <div key={category.slug} style={{ fontSize: "0.875rem" }}>
+          <div key={category.slug}>
             <div>
               <Link href={`/category/${category.slug}`}>{category.name}</Link>
             </div>
