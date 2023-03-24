@@ -7,9 +7,8 @@ export default function Home({ posts }) {
     <div
       style={{
         maxWidth: "64rem",
-        margin: "0 auto",
+        margin: "2rem auto",
         padding: "0 2rem",
-        marginTop: "2rem",
       }}
     >
       <Head>
@@ -35,7 +34,13 @@ export default function Home({ posts }) {
             <PostCard key={post.node.title} post={post.node} />
           ))}
         </div>
-        <div>
+        <div
+          style={{
+            position: "sticky",
+            top: "1rem",
+            alignSelf: "start",
+          }}
+        >
           <PostWidget />
           <Categories />
         </div>
