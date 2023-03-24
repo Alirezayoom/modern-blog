@@ -14,7 +14,6 @@ const Categories = () => {
         backgroundColor: "#444",
         padding: "1rem",
         borderRadius: "1rem",
-        marginBottom: "2rem",
       }}
     >
       <h3
