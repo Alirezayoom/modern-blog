@@ -15,6 +15,7 @@ const PostCard = ({ post }) => {
         maxWidth: "100%",
       }}
     >
+      {/* post image */}
       <div style={{ width: "100%", aspectRatio: "1/0.5" }}>
         <Image
           src={post.featuredImage.url}
@@ -27,6 +28,7 @@ const PostCard = ({ post }) => {
 
       {/* content */}
       <div style={{ padding: "1rem", display: "grid", gap: "1rem" }}>
+        {/* post title */}
         <h1 style={{ fontSize: "1.5rem", textAlign: "center" }}>
           <Link href={`/post/${post.slug}`}>{post.title}</Link>
         </h1>
@@ -81,6 +83,7 @@ const PostCard = ({ post }) => {
             <div>{moment(post.createdAt).format("DD MMM YYYY")}</div>
           </div>
         </div>
+        {/* post excerpt */}
         <div style={{ fontSize: "1.125rem", textAlign: "center" }}>
           {post.excerpt}
         </div>
