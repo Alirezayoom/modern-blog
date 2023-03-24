@@ -11,7 +11,7 @@ const Categories = () => {
   return (
     <div
       style={{
-        backgroundColor: "#444",
+        backgroundColor: "#333",
         padding: "1rem",
         borderRadius: "1rem",
       }}
