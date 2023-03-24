@@ -6,7 +6,7 @@ export default function Home({ posts }) {
   return (
     <div
       style={{
-        maxWidth: "80rem",
+        maxWidth: "64rem",
         margin: "0 auto",
         padding: "0 2rem",
         marginBottom: "2rem",
@@ -21,9 +21,17 @@ export default function Home({ posts }) {
           backgroundColor: "red",
           display: "grid",
           gridTemplateColumns: "repeat(4,1fr)",
+          gap: "1rem",
         }}
       >
-        <div style={{ gridColumnStart: "1", gridColumnEnd: "4" }}>
+        <div
+          style={{
+            display: "grid",
+            gap: "1rem",
+            gridColumnStart: "1",
+            gridColumnEnd: "4",
+          }}
+        >
           {posts.map((post) => (
             <PostCard key={post.node.title} post={post.node} />
           ))}
