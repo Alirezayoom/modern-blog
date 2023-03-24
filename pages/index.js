@@ -18,7 +18,7 @@ export default function Home({ posts }) {
       <div
         style={{
           display: "grid",
-          gridTemplateColumns: "1fr 1fr 1fr 1.3fr",
+          gridTemplateColumns: "8fr 3fr",
           gap: "1rem",
         }}
       >
@@ -26,8 +26,6 @@ export default function Home({ posts }) {
           style={{
             display: "grid",
             gap: "1rem",
-            gridColumnStart: "1",
-            gridColumnEnd: "4",
           }}
         >
           {posts.map((post) => (
