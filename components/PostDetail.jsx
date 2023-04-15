@@ -22,7 +22,14 @@ const PostDetail = ({ post }) => {
 
       {/* author and date */}
       <div style={{ padding: "1rem" }}>
-        <div style={{ display: "flex", gap: "1rem", justifyContent: "center" }}>
+        <div
+          style={{
+            display: "flex",
+            gap: "1rem",
+            marginBottom: "1rem",
+            justifyContent: "center",
+          }}
+        >
           <div
             style={{
               display: "flex",
@@ -71,6 +78,10 @@ const PostDetail = ({ post }) => {
             <div>{moment(post.createdAt).format("DD MMM YYYY")}</div>
           </div>
         </div>
+
+        <h1 style={{ textAlign: "center", marginBottom: "1rem" }}>
+          {post.title}
+        </h1>
       </div>
     </div>
   );
