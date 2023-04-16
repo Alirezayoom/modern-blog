@@ -140,7 +140,6 @@ const PostDetail = ({ post }) => {
         <h1 style={{ textAlign: "center", marginBottom: "1rem" }}>
           {post.title}
         </h1>
-        {/* {console.log(post.content.raw)} */}
         {post.content.raw.children.map((typeObj, index) => {
           const children = typeObj.children.map((item, itemindex) =>
             getContentFragment(itemindex, item.text, item)
