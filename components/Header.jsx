@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { getCategories } from "../services";
 
 const Header = () => {
@@ -27,7 +28,7 @@ const Header = () => {
       >
         <div>
           <Link href="/" style={{ fontWeight: "bold", fontSize: "1.5rem" }}>
-            My Blog
+            <Image src="/ak.svg" width={36} height={18} alt="my logo" />
           </Link>
         </div>
 
