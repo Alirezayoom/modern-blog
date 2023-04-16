@@ -58,7 +58,7 @@ const CommentsForm = ({ slug }) => {
       }}
     >
       <div>
-        <h3 style={{ marginBottom: "1rem" }}>Comments</h3>
+        <h3 style={{ marginBottom: "1rem" }}>Leave a Comment</h3>
 
         <textarea
           type="text"
