@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef } from "react";
+import { submitComment } from "../services";
 
-const CommentsForm = () => {
+const CommentsForm = ({ slug }) => {
   const [error, setError] = useState(false);
   const [localStorage, setLocalStorage] = useState(null);
   const [showSuccessMessage, setShowSuccessMessage] = useState(false);
@@ -8,15 +9,20 @@ const CommentsForm = () => {
   const commentRef = useRef();
   const nameRef = useRef();
   const emailRef = useRef();
-  const storeData = useRef();
+  const storeDataRef = useRef();
+
+  useEffect(() => {
+    nameRef.current.value = window.localStorage.getItem("name");
+    emailRef.current.value = window.localStorage.getItem("email");
+  }, []);
 
   const handleComment = () => {
     setError(false);
 
-    const { value: comment } = comment.current;
-    const { value: name } = name.current;
-    const { value: email } = email.current;
-    const { checked: storeData } = storeData.current;
+    const { value: comment } = commentRef.current;
+    const { value: name } = nameRef.current;
+    const { value: email } = emailRef.current;
+    const { checked: storeData } = storeDataRef.current;
 
     if (!comment || !name || !email) {
       setError(true);
@@ -26,12 +32,20 @@ const CommentsForm = () => {
     const commentObj = { name, email, comment, slug };
 
     if (storeData) {
-      localStorage.setItem("name", name);
-      localStorage.setItem("email", email);
+      window.localStorage.setItem("name", name);
+      window.localStorage.setItem("email", email);
     } else {
-      localStorage.removeItem("name", name);
-      localStorage.removeItem("email", email);
+      window.localStorage.removeItem("name", name);
+      window.localStorage.removeItem("email", email);
     }
+
+    submitComment(commentObj).then((res) => {
+      setShowSuccessMessage(true);
+
+      setTimeout(() => {
+        setShowSuccessMessage(false);
+      }, 3000);
+    });
   };
 
   return (
@@ -102,7 +116,7 @@ const CommentsForm = () => {
             name="storeData"
             id="storeData"
             value="true"
-            ref={storeData}
+            ref={storeDataRef}
             style={{
               borderRadius: "1rem",
               outline: "none",
